@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://qoqlqyifuqrc"]
 
+[ext_resource type="Texture2D" uid="uid://c4apghbfoe1aq" path="res://hedgehog.svg" id="1_ig7tw"]
+
 [node name="Node2D" type="Node2D" unique_id=1971857126]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=836007715]
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=187975745]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ig7tw")
