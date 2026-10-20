@@ -1,11 +1,39 @@
 [gd_scene format=3 uid="uid://qoqlqyifuqrc"]
 
+[ext_resource type="Script" uid="uid://crvel2t4gj86q" path="res://player.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://c4apghbfoe1aq" path="res://hedgehog.svg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://bb6u7talkj0ov" path="res://leaf.svg" id="2_0xm2m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kbhcc"]
+radius = 233.42023
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
+radius = 336.53677
 
 [node name="Node2D" type="Node2D" unique_id=1971857126]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=836007715]
+script = ExtResource("1_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=187975745]
+position = Vector2(-196, -28)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ig7tw")
+
+[node name="PickupArea" type="Area2D" parent="Player" unique_id=1480633871]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PickupArea" unique_id=446280699]
+position = Vector2(-195, -13)
+shape = SubResource("CircleShape2D_kbhcc")
+
+[node name="Leaf" type="Area2D" parent="." unique_id=1911201115 groups=["leaf"]]
+position = Vector2(201, 327)
+
+[node name="Sprite2D" type="Sprite2D" parent="Leaf" unique_id=1974237201]
+position = Vector2(329.99997, 63.999996)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leaf" unique_id=592733256 groups=["leaf"]]
+position = Vector2(313, 63)
+shape = SubResource("CircleShape2D_0xm2m")
